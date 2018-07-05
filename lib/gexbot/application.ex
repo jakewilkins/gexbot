@@ -14,6 +14,7 @@ defmodule Gexbot.Application do
       supervisor(GexbotWeb.Endpoint, []),
       # Start your own worker by calling: Gexbot.Worker.start_link(arg1, arg2, arg3)
       worker(Gexbot.Github.Events, []),
+      worker(Gexbot.Github.KeyCache, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
