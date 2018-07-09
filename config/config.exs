@@ -7,7 +7,9 @@ use Mix.Config
 
 # General application configuration
 config :gexbot,
-  ecto_repos: [Gexbot.Repo]
+  ecto_repos: [Gexbot.Repo],
+  webhook_secret: "supersecret"
+  # webhook_secret: "abiggersupersecret"
 
 # Configures the endpoint
 config :gexbot, GexbotWeb.Endpoint,
@@ -16,6 +18,8 @@ config :gexbot, GexbotWeb.Endpoint,
   render_errors: [view: GexbotWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Gexbot.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+# config :gexbot,
 
 # Configures Elixir's Logger
 config :logger, :console,

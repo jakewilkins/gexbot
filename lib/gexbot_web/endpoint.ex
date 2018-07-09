@@ -20,6 +20,8 @@ defmodule GexbotWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Logger
 
+  plug Plug.Gexbot.WebhookSecretValidator
+
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],

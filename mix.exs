@@ -42,6 +42,7 @@ defmodule Gexbot.Mixfile do
       # {:tentacat, "~> 1.0"},
       {:tentacat, path: "/Users/jakewilkins/workspace/tentacat"},
       {:timex, "~> 3.3"},
+      {:poison, "~> 3.1"},
       {:cowboy, "~> 1.0"}
     ]
   end
