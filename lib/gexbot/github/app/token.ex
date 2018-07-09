@@ -22,7 +22,7 @@ defmodule Gexbot.Github.App.Token do
       :cache_unavailable ->
         jwt_client = App.client_from(Map.take(spec, [:app_id, :private_key]))
         fetch_installation_key(jwt_client, inst_id)
-      key ->
+      {:cached, key, expiry} ->
         {:cached, key, expiry}
     end
     case installation_key do
