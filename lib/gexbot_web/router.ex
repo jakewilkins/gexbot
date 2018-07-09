@@ -6,9 +6,7 @@ defmodule GexbotWeb.Router do
   end
 
   pipeline :authenticated_api do
-  end
-
-  pipeline :webhooks do
+    plug :accepts, ["json"]
   end
 
   scope "/api", GexbotWeb do
@@ -16,7 +14,6 @@ defmodule GexbotWeb.Router do
     resources "/installations", InstallationController, except: [:new, :edit, :create]
     resources "/authorizations", AuthorizationController, except: [:new, :edit]
     resources "/people", PersonController, except: [:new, :edit]
-
   end
 
   post "hooks/event", GexbotWeb.GithubHookController, :event
