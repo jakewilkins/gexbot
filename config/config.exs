@@ -19,8 +19,6 @@ config :gexbot, GexbotWeb.Endpoint,
   pubsub: [name: Gexbot.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
-# config :gexbot,
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

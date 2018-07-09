@@ -14,9 +14,8 @@ defmodule Plug.Gexbot do
            {hmac_algo, server_signature} <- get_hmac_algo(signature) do
 
              {:ok, full_body, conn} = local_read_body(conn)
-
              generated_signature = hmac(hmac_algo, webhook_secret, full_body)
-             display_debug(server_signature, generated_signature)
+
              if secure_compare(server_signature, generated_signature) do
                assign(conn, :webhook_signature, :verified)
              else
